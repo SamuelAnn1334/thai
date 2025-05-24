@@ -3,61 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>手机下单系统</title>
+    <title>健康医药商城</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <!-- 手机号输入界面 -->
-        <div id="phone-input" class="screen active">
-            <h1>欢迎下单</h1>
-            <p>请输入您的手机号码</p>
-            <input type="tel" id="phone-number" placeholder="请输入11位手机号" maxlength="11">
-            <button id="confirm-phone">确认</button>
-            <p id="error-msg" class="error"></p>
-        </div>
-        
-        <!-- 商品浏览界面 -->
-        <div id="product-list" class="screen">
-            <h1>请选择商品</h1>
-            <div class="products">
-                <div class="product" data-id="1">
-                    <h3>蜈蚣药</h3>
-                    <p>传统配方，有效缓解关节疼痛</p>
-                    <button class="add-to-cart">加入订单</button>
+    <div class="container">
+        <!-- 顶部导航 -->
+        <header>
+            <h1>健康医药商城</h1>
+            <div class="user-info">
+                <span>欢迎选购</span>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 左侧分类导航 -->
+            <nav class="category-nav">
+                <ul>
+                    <li class="active"><span>精选药品</span></li>
+                    <li><span>传统中药</span></li>
+                    <li><span>保健食品</span></li>
+                    <li><span>外用药品</span></li>
+                    <li><span>医疗器械</span></li>
+                    <li><span>限时特惠</span></li>
+                    <li><span>会员专享</span></li>
+                </ul>
+            </nav>
+
+            <!-- 右侧商品列表 -->
+            <div class="product-list">
+                <div class="promo-banner">
+                    <img src="https://via.placeholder.com/350x100/4CAF50/FFFFFF?text=健康生活节特惠" alt="活动促销">
                 </div>
-                <div class="product" data-id="2">
-                    <h3>八仙鼻通</h3>
-                    <p>快速缓解鼻塞，呼吸畅通</p>
-                    <button class="add-to-cart">加入订单</button>
+
+                <!-- 商品卡片1：蜈蚣药 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/150/FFFFFF/4CAF50?text=蜈蚣药" alt="蜈蚣药">
+                    </div>
+                    <div class="product-info">
+                        <h3>蜈蚣药</h3>
+                        <p class="sales">月售280+ <span class="tag">百年秘方</span></p>
+                        <p class="notice">适用于风湿关节痛</p>
+                        <div class="price">
+                            <span class="current-price">￥89</span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
                 </div>
-                <div class="product" data-id="3">
-                    <h3>减肥咖啡</h3>
-                    <p>天然成分，健康减重</p>
-                    <button class="add-to-cart">加入订单</button>
+
+                <!-- 商品卡片2：八仙鼻通 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/150/FFFFFF/2196F3?text=八仙鼻通" alt="八仙鼻通">
+                    </div>
+                    <div class="product-info">
+                        <h3>八仙鼻通</h3>
+                        <p class="sales">月售420+ <span class="tag">鼻塞克星</span></p>
+                        <p class="notice">快速缓解鼻塞</p>
+                        <div class="price">
+                            <span class="original-price">￥45</span>
+                            <span class="current-price discount">￥32 <span class="discount-tag">特惠价</span></span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+
+                <!-- 商品卡片3：减肥咖啡 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/150/FFFFFF/FF9800?text=减肥咖啡" alt="减肥咖啡">
+                    </div>
+                    <div class="product-info">
+                        <h3>减肥咖啡</h3>
+                        <p class="sales">月售650+ <span class="tag">健康减重</span></p>
+                        <p class="notice">天然成分无副作用</p>
+                        <div class="price">
+                            <span class="original-price">￥128</span>
+                            <span class="current-price discount">￥98 <span class="discount-tag">组合优惠</span></span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
                 </div>
             </div>
-            <button id="view-cart">查看订单</button>
         </div>
-        
-        <!-- 订单确认界面 -->
-        <div id="order-confirm" class="screen">
-            <h1>确认订单</h1>
-            <div id="cart-items"></div>
-            <p>手机号: <span id="order-phone"></span></p>
-            <button id="submit-order">提交订单</button>
-            <button id="back-to-products">返回商品列表</button>
-        </div>
-        
-        <!-- 订单成功界面 -->
-        <div id="order-success" class="screen">
-            <h1>订单提交成功!</h1>
-            <p>您的订单已收到，我们会尽快处理。</p>
-            <p>订单号: <span id="order-id"></span></p>
-            <button id="new-order">开始新订单</button>
+
+        <!-- 底部购物车 -->
+        <div class="cart-bar">
+            <div class="cart-icon">
+                <span class="cart-count">0</span>
+            </div>
+            <div class="cart-info">
+                <span class="total-price">￥0</span>
+                <span class="delivery-info">满100元包邮</span>
+            </div>
+            <button class="checkout-btn" disabled>去结算</button>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
