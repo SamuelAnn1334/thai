@@ -1,3 +1,5 @@
+console.log("脚本已加载");
+document.getElementById('app').innerHTML = '<h1>测试渲染</h1>';
 document.addEventListener('DOMContentLoaded', function() {
     // 页面元素
     const phoneInputScreen = document.getElementById('phone-input');
